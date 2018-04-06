@@ -1,0 +1,13 @@
+<% if seller_signed_in? %>
+<div id='welcome-button1'><a href='/wells/new'><div class='welcome-buttons'>Create a New Well</div></a>
+</div> 
+<% end %>
+
+<% if buyer_signed_in? %>
+<div id='welcome-button2'><a href='/wells'><div class='welcome-buttons'> Click Here to View Water Wells</div></a>
+<% end %>
+
+<%= video_tag "waterwell.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+
+<!-- config.assets.paths << "#{Rails.root}/app/assets/images" -->
+

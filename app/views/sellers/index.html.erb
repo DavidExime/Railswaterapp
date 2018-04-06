@@ -1,0 +1,9 @@
+<h1>List of all Sellers:</h1>
+
+<% @sellers.each do |s| %>
+<div><a href='/sellers/<%= s.id%>'><%= s.Firstname %></a></div>
+<div>location:<%= s.location %></div>
+
+	<% end %>
+
+

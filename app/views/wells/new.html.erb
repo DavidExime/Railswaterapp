@@ -1,0 +1,18 @@
+<div id='wellsnew'>
+
+
+<%= form_for @well do |f| %>
+<%= f.hidden_field :seller_id, :value => @seller.id %>
+
+<div id='textfield'>
+
+Location: <%= f.text_field :location %>
+Quanitity: <%= f.text_field :quality %>
+Price: <%= f.text_field :price %>
+
+
+
+    <%= f.submit %>
+    </div>
+<% end %>
+</div>

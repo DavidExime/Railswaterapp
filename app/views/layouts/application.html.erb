@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Waterproject3</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<nav>
+      
+<ul>
+<div class ='navbar'>
+
+<% if buyer_signed_in?  %>
+ <li class="navbar_item"><%= link_to "Sign Out",  destroy_seller_session_path, method: :delete %></li>
+ <li class="navbar_item"><%= link_to "Water Well List", wells_path %></li>
+<% end %>
+
+
+<% if seller_signed_in?  %>
+ <li class="navbar_item"><%= link_to "Sign Out",  destroy_seller_session_path, method: :delete %></li>
+ <li class="navbar_item"><%= link_to "New Well", new_well_path %></li>  
+          
+  <li class="navbar_item"><%= link_to "Sellers", new_seller_path %></li>
+<% end %>
+
+<% if !buyer_signed_in?  &&  !seller_signed_in? %>
+
+<li class="navbar_item"><%= link_to "Become a Buyer", new_buyer_registration_path %></li>
+<li class="navbar_item"><%= link_to "Become a Seller", new_seller_registration_path %></li>
+
+<li class="navbar_item"><%= link_to "Login as a Buyer",     buyer_session_path %></li>
+
+<li class="navbar_item"><%= link_to "Login as a Seller", seller_session_path %></li>
+
+<% end %>
+</ul>
+          
+        </nav>
+  </div>
+  </div>
+    <%= yield %>
+  </body>
+</html>

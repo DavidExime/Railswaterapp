@@ -1,0 +1,16 @@
+<h1>Sellers Profile Page</h1>
+
+  <div><%= @current_seller.Firstname %></div>
+  <div><%= @current_seller.Lastname  %></div>
+  <div><%= @current_seller.email %></div>
+  <div><%= @current_seller.location %></div>
+  <div><%= @current_seller.experience %></div>
+<h2>List of all Wells that <%= @current_seller.Firstname %> has:</h2> 
+
+<% @current_seller.wells.each do |w| %>
+<div>Location: <%= w.location %></div>
+<div>Price: <a href='/wells/<%= w.id %>'><%= w.price %></a></div>
+<% end %>
+
+
+

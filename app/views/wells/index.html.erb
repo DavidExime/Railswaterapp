@@ -1,0 +1,18 @@
+ <div class= 'loginmain'><h3>List of all Water Wells:</h3> 
+
+<div id='textfield'><% @wells.each do |a| %>
+
+<%= Seller.find_by_id(a.seller_id).Firstname %>
+<%= Seller.find_by_id(a.seller_id).Lastname %>
+Location:<%= a.location %>
+Quanitity:<%= a.quality %>
+<br>Price of water:<%= a.price %><br>
+
+<a href='/wells/<%=a.id %>'><%= Seller.find_by_id(a.seller_id).email %></a>
+<% end %>
+</div>
+</div>	
+
+
+
+
